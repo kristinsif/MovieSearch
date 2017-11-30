@@ -1,0 +1,4 @@
+MovieSearch.Droid.MainActivity, MovieSearch.Android;md5af3c8b20092685c2f4f6a25bd04abd93.MainActivity
+MovieSearch.Droid.MainActivity, MovieSearch.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5af3c8b20092685c2f4f6a25bd04abd93.MainActivity
+MovieSearch.Droid.MainActivity;md5af3c8b20092685c2f4f6a25bd04abd93.MainActivity
+moviesearch.droid.MainActivity;md5af3c8b20092685c2f4f6a25bd04abd93.MainActivity

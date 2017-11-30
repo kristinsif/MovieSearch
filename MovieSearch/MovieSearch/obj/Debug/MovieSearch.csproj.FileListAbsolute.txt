@@ -1,0 +1,11 @@
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch\bin\Debug\MovieSearch.dll
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch\bin\Debug\MovieSearch.pdb
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch\obj\Debug\MovieSearch.csprojResolveAssemblyReference.cache
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch\obj\Debug\MovieSearch.csproj.CoreCompileInputs.cache
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch\obj\Debug\MovieSearch.dll
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch\obj\Debug\MovieSearch.pdb
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch\bin\Debug\DM.MovieApi.dll
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch\bin\Debug\Newtonsoft.Json.dll
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch\bin\Debug\DM.MovieApi.pdb
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch\bin\Debug\DM.MovieApi.xml
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch\bin\Debug\Newtonsoft.Json.xml
