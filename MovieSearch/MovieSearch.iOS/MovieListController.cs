@@ -41,7 +41,6 @@ namespace MovieSearch.iOS
                 Overview = _movieDetail[row].Overview
             };
             this.NavigationController.PushViewController(new MovieDetailController(detailMovie), true);
-
         }
     }
 }

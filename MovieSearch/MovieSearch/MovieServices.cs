@@ -11,7 +11,6 @@ namespace MovieSearch
     public class MovieServices
     {
         private IApiMovieRequest _movieApi;
-        private object activityIndicatorViewStyle;
         private int i = 0;
         private ApiSearchResponse<MovieInfo> _response;
 
@@ -22,7 +21,7 @@ namespace MovieSearch
 
         public async Task<List<Movie>> getListOfMoviesMatchingSearch(string nameField)
         {
-            List<Movie> responseMovieList = new List<Movie>();
+            List<Movie> responseMovieList = new List<Movie>();           
 
             if (nameField.Length == 0)
             {
@@ -43,15 +42,9 @@ namespace MovieSearch
                         number = cast.Item.CastMembers.Count;
                     }
                     for (int i = 0; i < number; i++)
-                    {
-                        if (cast.Item.CastMembers.Count == 0)
-                        {
-                            actors.Add("ksb");
-                        }
-                        else
-                        {
-                            actors.Add(cast.Item.CastMembers[i].Name);
-                        }
+                    {                   
+                        actors.Add(cast.Item.CastMembers[i].Name);
+                       
                     }
 
                     responseMovieList.Add(new Movie() { Title = info.Title, Year = info.ReleaseDate, Actors = actors, ImageUrl = info.PosterPath});
@@ -60,24 +53,27 @@ namespace MovieSearch
             return responseMovieList;
         }
 
-        public List<MovieDetail> getListOfMovieDetails()
+        public async Task<List<MovieDetail>> getListOfMovieDetails()
         {
             List<MovieDetail> movieDetailList = new List<MovieDetail>();
-            
-            foreach(MovieInfo info in _response.Results)
+            string runTime = "";
+
+            foreach (MovieInfo info in _response.Results)
             {
+                var movie = await _movieApi.FindByIdAsync(info.Id);
+                runTime = movie.Item.Runtime.ToString();
                 movieDetailList.Add(new MovieDetail()
                 {
                     Title = info.Title,
                     Overview = info.Overview,
                     Year = info.ReleaseDate,
                     Genre = info.Genres,
-                    ImageUrl = info.PosterPath                   
+                    ImageUrl = info.PosterPath,
+                    RunningTime = runTime
                 });
-
-            }
-            
+            }           
             return movieDetailList;
         }
+
     } 
 }

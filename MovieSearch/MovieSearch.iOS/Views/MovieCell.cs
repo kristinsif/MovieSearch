@@ -21,21 +21,21 @@ namespace MovieSearch.iOS.Views
 
             this._imageView = new UIImageView();
             {
-                Frame = new CGRect(5, 5, 33, 33);
+                Frame = new CGRect(5, 5, 5, 5);
             };
 
             this._titleLabel = new UILabel()
             {
-                Frame = new CGRect(75, 15, this.ContentView.Bounds.Width , 20),
-                Font = UIFont.FromName("Cochin-BoldItalic", 15f),
+                Frame = new CGRect(75, 5, this.ContentView.Bounds.Width - 80, 20),
+                Font = UIFont.FromName("ArialMT", 15f),
                 TextColor = UIColor.FromRGB(127, 51, 0),
                 BackgroundColor = UIColor.Clear
             };
 
             this._actorLabel = new UILabel()
             {
-                Frame = new CGRect(75, 40, this.ContentView.Bounds.Width, 20),
-                Font = UIFont.FromName("Cochin-BoldItalic", 12f),
+                Frame = new CGRect(75, 25, this.ContentView.Bounds.Width -80, 20), 
+                Font = UIFont.FromName("Cochin-BoldItalic", 14f),
                 TextColor = UIColor.FromRGB(100, 51, 0),
                 BackgroundColor = UIColor.Clear
             };

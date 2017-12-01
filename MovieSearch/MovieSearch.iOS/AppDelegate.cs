@@ -4,6 +4,7 @@ using DM.MovieApi.ApiResponse;
 using DM.MovieApi.MovieDb.Movies;
 using Foundation;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UIKit;
 
 namespace MovieSearch.iOS
@@ -19,6 +20,7 @@ namespace MovieSearch.iOS
 			get;
 			set;
 		}
+        TabController tabController;
 
 		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
@@ -31,10 +33,26 @@ namespace MovieSearch.iOS
             var movieService = new MovieServices(movieApi);
             MovieDownload.StorageClient storageClient = new MovieDownload.StorageClient();
             MovieDownload.ImageDownloader imageDownloader = new MovieDownload.ImageDownloader(storageClient);
-            var controller = new MovieSearchViewController(movieService, imageDownloader);
 
-           // var controller = new MovieSearchViewController(new List<string> { "ks"});
-            this.Window.RootViewController = new UINavigationController(controller);
+            var controller = new MovieSearchViewController(movieService, imageDownloader);
+            var movieSearchNavigationController = new UINavigationController(controller);
+
+           // List<Movie> topRatedMovies = new List<Movie>();
+          //  topRatedMovies = movieService.getTopRatedMovies();
+
+            var movieListController = new MovieListController(new List<Movie>() { }, new List<MovieDetail>() { });
+            var movieListNavigationController = new UINavigationController(movieListController);
+            var tabController = new TabController()
+            {
+                ViewControllers = new UIViewController[] { movieSearchNavigationController, movieListNavigationController}
+            };
+
+
+
+
+
+            this.Window.RootViewController = tabController; 
+                //new UINavigationController(controller);
             this.Window.MakeKeyAndVisible();
 
             return true;

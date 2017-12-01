@@ -8,6 +8,8 @@ namespace MovieSearch.iOS.Controllers
     {
 
         private readonly MovieDetail _movieDetail;
+        private const double StartX = 20;
+        private const double StartY = 20;
 
 
         public MovieDetailController(MovieDetail movieDetail)
@@ -36,8 +38,10 @@ namespace MovieSearch.iOS.Controllers
         {
             var titleLabel = new UILabel()
             {
-                Frame = new CGRect(20, 50, this.View.Bounds.Width - 2, 50),
-                Text = $"{_movieDetail.Title} ({_movieDetail.Year:yyyy})"
+                Frame = new CGRect(StartX, 80, this.View.Bounds.Width - StartX, 20),
+                Text = $"{_movieDetail.Title} ({_movieDetail.Year:yyyy})",
+                LineBreakMode = UILineBreakMode.WordWrap,
+                Lines = 0
             };
             return titleLabel;
         }
@@ -61,8 +65,12 @@ namespace MovieSearch.iOS.Controllers
             }
             var titleLabel = new UILabel()
             {
-                Frame = new CGRect(20, 100, this.View.Bounds.Width - 2, 50),
-                Text = genres,
+                Frame = new CGRect(StartX, 100, this.View.Bounds.Width - StartX, 20),
+                Text = $"{genres} | {_movieDetail.RunningTime} min",
+                LineBreakMode = UILineBreakMode.WordWrap,
+                Lines = 0,
+                Font = UIFont.FromName("Verdana-Italic", 12f),
+
 
             };
             return titleLabel;
@@ -72,10 +80,11 @@ namespace MovieSearch.iOS.Controllers
         {
             var descrtiptionLabel = new UILabel()
             {
-                Frame = new CGRect(20, 150, this.View.Bounds.Width - 20, 200),
+                Frame = new CGRect(StartX, 320, this.View.Bounds.Width - StartX * 2, 200),
                 Text = _movieDetail.Overview,
-                LineBreakMode = UILineBreakMode.WordWrap,
-                Lines = 0
+                Lines = 0,
+                Font = UIFont.FromName("Verdana-Italic", 12f)
+
             };
             return descrtiptionLabel;
         }
@@ -85,7 +94,7 @@ namespace MovieSearch.iOS.Controllers
         {
             var imageView = new UIImageView()
             {
-                Frame = new CGRect(20, 350, 20, 20),
+                Frame = new CGRect(StartX, 150, this.View.Bounds.Width / 2 - StartX * 2, this.View.Bounds.Width / 2 - StartX * 2),
                 Image = UIImage.FromFile(_movieDetail.ImageUrl)
             };
             return imageView;

@@ -58,7 +58,7 @@ namespace MovieSearch.iOS
                 
                 this._movieList = await _movieService.getListOfMoviesMatchingSearch(nameField.Text);
                 await _imageDownloader.getLocalPath(this._movieList);
-                this._movieDetailList = _movieService.getListOfMovieDetails();
+                this._movieDetailList = await _movieService.getListOfMovieDetails();
                 await _imageDownloader.getImageUrl(this._movieDetailList);
 
                 this.NavigationController.PushViewController(new MovieListController(_movieList, _movieDetailList), true);

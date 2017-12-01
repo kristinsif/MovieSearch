@@ -126,12 +126,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MovieCollectionController.cs" />
+    <Compile Include="MovieCollectionDataSource.cs" />
     <Compile Include="MovieDetailController.cs" />
     <Compile Include="MovieListDataSource.cs" />
     <Compile Include="MovieListController.cs" />
     <Compile Include="MovieSearchViewController.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="TabController.cs" />
     <Compile Include="Views\MovieCell.cs" />
   </ItemGroup>
   <Import Project="..\..\..\..\..\Documents\smaforrit\2017-T-488-MAPP-master\Projects\MovieDownload\MovieDownload.projitems" Label="Shared" />
