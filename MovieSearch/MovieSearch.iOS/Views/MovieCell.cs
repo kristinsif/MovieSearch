@@ -37,24 +37,33 @@ namespace MovieSearch.iOS.Views
                 Frame = new CGRect(75, 40, this.ContentView.Bounds.Width, 20),
                 Font = UIFont.FromName("Cochin-BoldItalic", 12f),
                 TextColor = UIColor.FromRGB(100, 51, 0),
-                TextAlignment = UITextAlignment.Center,
                 BackgroundColor = UIColor.Clear
             };
-
-            
-
+          
             this.ContentView.AddSubviews(new UIView[] { this._imageView, this._titleLabel, this._actorLabel });
             this.Accessory = UITableViewCellAccessory.DisclosureIndicator;
         }
 
         public void UpdateCell(Movie movie)
         {
+            string actors = "";
             this._titleLabel.Text = $"{movie.Title} ({movie.Year:yyyy})";
-            this._actorLabel.Text = movie.Actors[0] + ", " + movie.Actors[1] + ", " + movie.Actors[2];
-            this._imageView.Image = UIImage.FromFile(movie.ImageUrl);
+            for(int i = 0; i < movie.Actors.Count; i++)
+            {
+                
+                if(movie.Actors.Count -1 == i)
+                {
+                    actors += movie.Actors[i];
+                }
+                else
+                {
+                    actors += movie.Actors[i] + ", ";
+                }
+            }
+            this._actorLabel.Text = actors;
+            var image = UIImage.FromFile(movie.ImageUrl);
+            this._imageView.Image = image;
             
-            //movie.Title + "(" + movie.Year + ")";
-
         }
     }
 }

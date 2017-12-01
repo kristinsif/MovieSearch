@@ -126,6 +126,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MovieDetailController.cs" />
     <Compile Include="MovieListDataSource.cs" />
     <Compile Include="MovieListController.cs" />
     <Compile Include="MovieSearchViewController.cs" />

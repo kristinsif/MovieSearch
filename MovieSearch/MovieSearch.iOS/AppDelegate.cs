@@ -28,7 +28,10 @@ namespace MovieSearch.iOS
 
             MovieDbFactory.RegisterSettings( new MovieDbSettings());
             var movieApi = MovieDbFactory.Create<IApiMovieRequest>().Value;
-            var controller = new MovieSearchViewController(movieApi);
+            var movieService = new MovieServices(movieApi);
+            MovieDownload.StorageClient storageClient = new MovieDownload.StorageClient();
+            MovieDownload.ImageDownloader imageDownloader = new MovieDownload.ImageDownloader(storageClient);
+            var controller = new MovieSearchViewController(movieService, imageDownloader);
 
            // var controller = new MovieSearchViewController(new List<string> { "ks"});
             this.Window.RootViewController = new UINavigationController(controller);

@@ -33,7 +33,8 @@
   <ItemGroup>
     <Compile Include="Movie.cs" />
     <Compile Include="MovieDbSettings.cs" />
-    <Compile Include="Movies.cs" />
+    <Compile Include="MovieDetail.cs" />
+    <Compile Include="MovieServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

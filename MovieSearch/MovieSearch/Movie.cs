@@ -13,7 +13,7 @@ namespace MovieSearch
         public DateTime Year { get; set; }
         public List<string> Actors { get; set; }
         public string ImageUrl { get; set; }
-     //   public string localImagePath { get; set; }
-
+        public string localImagePath { get; set; }
+       
     }
 }

@@ -13,14 +13,17 @@ namespace MovieSearch.iOS
         private const double StartX = 20;
         private const double StartY = 80;
         private const double Height = 50;
-        private IApiMovieRequest movieApi;
-        private object activityIndicatorViewStyle;
+        private List<Movie> _movieList;
+        private List<MovieDetail> _movieDetailList;
+        private MovieServices _movieService;
+        private MovieDownload.ImageDownloader _imageDownloader;
         private int i = 0;
         
 
-        public MovieSearchViewController(IApiMovieRequest movieList)
+        public MovieSearchViewController(MovieServices movieService, MovieDownload.ImageDownloader imageDownloader)
         {
-            movieApi = movieList;
+            _movieService = movieService;
+            _imageDownloader = imageDownloader;
         }
 
         public override void ViewDidLoad()
@@ -47,61 +50,21 @@ namespace MovieSearch.iOS
 
             navigateButton.TouchUpInside += async (sender, args) =>
             {
-
                 navigateButton.Enabled = false;
                 spinner.StartAnimating();
 
                 nameField.ResignFirstResponder();
-                List<Movie> responseMovieList = new List<Movie>();
-                MovieDownload.StorageClient sclient = new MovieDownload.StorageClient();
-                MovieDownload.ImageDownloader idownl = new MovieDownload.ImageDownloader(sclient);
-
-                List<string> mc = new List<string>();
                 
-                // responseMovieList.Add("");
                 
-                if (nameField.Text.Length == 0)
-                {
-                    this.NavigationController.PushViewController(new MovieListController(responseMovieList), true);
-                    navigateButton.Enabled = true;
-                    spinner.StopAnimating();
-                }
-                else
-                {
+                this._movieList = await _movieService.getListOfMoviesMatchingSearch(nameField.Text);
+                await _imageDownloader.getLocalPath(this._movieList);
+                this._movieDetailList = _movieService.getListOfMovieDetails();
+                await _imageDownloader.getImageUrl(this._movieDetailList);
 
-                    ApiSearchResponse<MovieInfo> response = await movieApi.SearchByTitleAsync(nameField.Text);
-                   
-                    foreach (MovieInfo info in response.Results)
-                    {
-                        List<string> actors = new List<string>();
-                        string poster = info.PosterPath;
-                        CancellationTokenSource cts = new CancellationTokenSource();
-                        string localPath = idownl.LocalPathForFilename(poster);
-                        await idownl.DownloadImage(poster, localPath, CancellationToken.None);
-                                                                   
-                            ApiQueryResponse<MovieCredit> cast = await movieApi.GetCreditsAsync(info.Id);
-
-                            if (cast.Item.CastMembers.Count == 0)
-                            {
-                                actors.Add("haukuri");
-                                actors.Add("haukuris");
-                                actors.Add("haukuria");
-                            }
-                            else
-                            {
-                                for (int i = 0; i < 3; i++)
-                                { 
-                                    actors.Add(cast.Item.CastMembers[i].Name);                                 
-                                }
-                            }
-
-                        responseMovieList.Add(new Movie() { Title = info.Title, Year = info.ReleaseDate, Actors = actors, ImageUrl = localPath});
-                    }
-
-                    this.NavigationController.PushViewController(new MovieListController(responseMovieList), true);
-                    navigateButton.Enabled = true;
-                    spinner.StopAnimating();
-                }
+                this.NavigationController.PushViewController(new MovieListController(_movieList, _movieDetailList), true);
+                navigateButton.Enabled = true;
+                spinner.StopAnimating();                                                
+                
             };
             return navigateButton;
         }
