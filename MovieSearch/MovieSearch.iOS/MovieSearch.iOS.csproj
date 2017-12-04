@@ -137,6 +137,6 @@
     <Compile Include="TabController.cs" />
     <Compile Include="Views\MovieCell.cs" />
   </ItemGroup>
-  <Import Project="..\..\..\..\..\Documents\smaforrit\2017-T-488-MAPP-master\Projects\MovieDownload\MovieDownload.projitems" Label="Shared" />
+  <Import Project="..\MovieDownload\MovieDownload.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

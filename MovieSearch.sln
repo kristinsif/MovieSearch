@@ -9,12 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieSearch.iOS", "MovieSea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieSearch", "MovieSearch\MovieSearch\MovieSearch.csproj", "{6FFB523D-E76D-4A0B-BA8A-D1AC3DB569BF}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MovieDownload", "..\..\..\Documents\smaforrit\2017-T-488-MAPP-master\Projects\MovieDownload\MovieDownload.shproj", "{8E0A00B1-D0E6-48F6-AA04-26171F002437}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MovieDownload", "MovieSearch\MovieDownload\MovieDownload.shproj", "{8E0A00B1-D0E6-48F6-AA04-26171F002437}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		..\..\..\Documents\smaforrit\2017-T-488-MAPP-master\Projects\MovieDownload\MovieDownload.projitems*{8e0a00b1-d0e6-48f6-aa04-26171f002437}*SharedItemsImports = 13
-		..\..\..\Documents\smaforrit\2017-T-488-MAPP-master\Projects\MovieDownload\MovieDownload.projitems*{da141cfc-1f6b-47a4-82ad-a6f3855e822d}*SharedItemsImports = 4
+		MovieSearch\MovieDownload\MovieDownload.projitems*{8e0a00b1-d0e6-48f6-aa04-26171f002437}*SharedItemsImports = 13
+		MovieSearch\MovieDownload\MovieDownload.projitems*{da141cfc-1f6b-47a4-82ad-a6f3855e822d}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
