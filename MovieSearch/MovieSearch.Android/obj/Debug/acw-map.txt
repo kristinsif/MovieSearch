@@ -1,3 +1,7 @@
+HelloWorld.Droid.SplashActivity, MovieSearch.Android;md59721bbcf776169562cd23866973e35c1.SplashActivity
+HelloWorld.Droid.SplashActivity, MovieSearch.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59721bbcf776169562cd23866973e35c1.SplashActivity
+HelloWorld.Droid.SplashActivity;md59721bbcf776169562cd23866973e35c1.SplashActivity
+helloworld.droid.SplashActivity;md59721bbcf776169562cd23866973e35c1.SplashActivity
 MovieSearch.Droid.MainActivity, MovieSearch.Android;md5af3c8b20092685c2f4f6a25bd04abd93.MainActivity
 MovieSearch.Droid.MainActivity, MovieSearch.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5af3c8b20092685c2f4f6a25bd04abd93.MainActivity
 MovieSearch.Droid.MainActivity;md5af3c8b20092685c2f4f6a25bd04abd93.MainActivity

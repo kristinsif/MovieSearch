@@ -13,6 +13,7 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MovieDownload", "MovieSearc
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		MovieSearch\MovieDownload\MovieDownload.projitems*{79e5731d-ac16-4a3e-891d-c912f76b52b1}*SharedItemsImports = 4
 		MovieSearch\MovieDownload\MovieDownload.projitems*{8e0a00b1-d0e6-48f6-aa04-26171f002437}*SharedItemsImports = 13
 		MovieSearch\MovieDownload\MovieDownload.projitems*{da141cfc-1f6b-47a4-82ad-a6f3855e822d}*SharedItemsImports = 4
 	EndGlobalSection

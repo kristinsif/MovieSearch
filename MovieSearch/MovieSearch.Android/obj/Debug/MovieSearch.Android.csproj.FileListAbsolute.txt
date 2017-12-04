@@ -24,3 +24,10 @@ C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch.Android\obj\Debu
 C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch.Android\obj\Debug\res\drawable-xxxhdpi\icon.png
 C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch.Android\obj\Debug\R.cs.flag
 C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch.Android\obj\Debug\uploadflags.txt
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch.Android\bin\Debug\DM.MovieApi.dll.mdb
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch.Android\bin\Debug\MovieSearch.Android.dll.mdb
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch.Android\obj\Debug\android\assets\DM.MovieApi.dll.mdb
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch.Android\obj\Debug\android\assets\MovieSearch.Android.dll.mdb
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch.Android\obj\Debug\android\assets\MovieSearch.dll.mdb
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch.Android\obj\Debug\res\drawable-hdpi\splash.png
+C:\Users\krist\source\repos\MovieSearch\MovieSearch\MovieSearch.Android\obj\Debug\res\values\styles.xml
